@@ -1,4 +1,3 @@
-/* desafio 01 */
 document.write('<h1>Informações</h1>');
 let pessoa = {
  nome :'Fedor Vladimirovich Emelianenko',
