@@ -1,48 +1,51 @@
-let numeroSorteado = 0 
+/* Aula 16 de JS Dado Virtual */
+
+// SELECIONAR ELEMENTOS
+let numeroSorteado = 4
 let imgDado = document.querySelector('#imgDado')
 let btnSortear = document.querySelector('#btnSortear')
 let sorteado = document.querySelector('#sorteado')
 let dadoRolando = document.querySelector('#dadoRolando')
 
-btnSortear.addEventListener('click', function(){
-    //adicionar a animação
+btnSortear.addEventListener('click', function() {
+    // adicionar a animacao
     imgDado.classList.add('animar')
     sorteado.classList.add('aparecer')
 
-
-    //tocar o efeito sonoro
+    // tocar o efeito sonoro
     dadoRolando.play()
 
-    //ocultar o botão soretar 
+// ocultar o botao Sortear
     btnSortear.style.display = 'none'
 
-    //usar setTimeout para excutar a ação 
-    setTimeout(function(){
-        //Armazenar numero sorteado na var
+// usar setTimeout para executar as acoes apos 1.75 segundos
+    setTimeout(function() {
+
+        // ARMAZENAR NUMERO SORTEADO NA VARIAVEL
         numeroSorteado = getRandomInt(1,6)
 
-        //escrever o numero sorteado no console
+        // escrever o numero sorteado no console
         console.log(numeroSorteado)
 
-        //definir atributo src com base no numero
-        imgDado.setAttribute('src' , '../dado/'+numeroSorteado+'.png')
-        //escrever no paraggrafo o numero sorteado
+        // definir atributo src com base no numero
+        imgDado.setAttribute('src' , '../images/dado/'+numeroSorteado+'.png')
+        // escrever no paragrafo numeroSorteado
         sorteado.textContent = numeroSorteado
-
-        //exibir o botão sortear 
+        
+        // exibir o botao Sortear
         btnSortear.style.display = 'inline-block'
-
-        //retirar a animação
+        
+        // retirar a animacao
         imgDado.classList.remove('animar')
         sorteado.classList.remove('aparecer')
-    
+    }, 1750)
 
-    },1750)
 })
-//função que gera numero randomico inteiro
-//incluindo o minimo e o maximo
-function getRandomInt(min, max){
-    min = Math.ceil(min) // arredondar para cima ceil = teto
-    max = Math.floor(max) //arredonda para baixo floor = piso
+
+// FUNCAO que gera numero randomico inteiro
+// incluindo o minimo e o maximo
+function getRandomInt(min, max) {
+    min = Math.ceil(min)  // arredonda para cima  ceil  = teto
+    max = Math.floor(max) // arredonda para baixo floor = piso
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
