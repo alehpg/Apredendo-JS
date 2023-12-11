@@ -28,7 +28,7 @@ btnSortear.addEventListener('click', function() {
         console.log(numeroSorteado)
 
         // definir atributo src com base no numero
-        imgDado.setAttribute('src' , '../images/dado/'+numeroSorteado+'.png')
+        imgDado.setAttribute('src' , './images/dado/' +numeroSorteado+ '.png')
         // escrever no paragrafo numeroSorteado
         sorteado.textContent = numeroSorteado
         
